@@ -25,4 +25,14 @@ class UsersController < ApplicationController
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
   end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.update(
+      first_name: params[:first_name] || @user.first_name,
+      last_name: params[:last_name] || @user.last_name,
+      home_currency: params[:home_currency] || @user.home_currency,
+    )
+    render :show
+  end
 end
