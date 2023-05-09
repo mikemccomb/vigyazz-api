@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   post "/sessions" => "sessions#create"
   patch "users/:id" => "users#update"
   delete "users/:id" => "users#destroy"
+  get "/weather" => "weather#index"
 end
