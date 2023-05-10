@@ -11,7 +11,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "create" do
     assert_difference "User.count", 1 do
-      post "/users.json", params: { first_name: "Test", last_name: "Testerson", email: "test@example.com", password: "password", password_confirmation: "password", home_currency: "USD" }
+      post "/users.json", params: { first_name: "Test", last_name: "Testerson", email: "test@example.com", password: "password", password_confirmation: "password" }
       assert_response 201
     end
   end
@@ -21,7 +21,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response 200
 
     data = JSON.parse(response.body)
-    assert_equal ["id", "first_name", "last_name", "home_currency"], data.keys
+    assert_equal ["id", "first_name", "last_name"], data.keys
   end
 
   test "update" do

@@ -16,7 +16,6 @@ class UsersController < ApplicationController
       email: params[:email],
       password: params[:password],
       password_confirmation: params[:password_confirmation],
-      home_currency: params[:home_currency],
     )
 
     if user.save
@@ -31,7 +30,6 @@ class UsersController < ApplicationController
     @user.update(
       first_name: params[:first_name] || @user.first_name,
       last_name: params[:last_name] || @user.last_name,
-      home_currency: params[:home_currency] || @user.home_currency,
     )
     render :show
   end
