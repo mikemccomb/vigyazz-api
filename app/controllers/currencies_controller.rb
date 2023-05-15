@@ -1,9 +1,8 @@
 require "json"
 
 class CurrenciesController < ApplicationController
-  def index
-    response = Currency.all.find_by(entity: params["entity"].upcase)
-    data = JSON.parse(response)
-    render json: data
+  def show
+    currency = Currency.find_by(entity: params[:entity])
+    render json: currency
   end
 end

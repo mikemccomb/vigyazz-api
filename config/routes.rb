@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   delete "users/:id" => "users#destroy"
   get "/weather" => "weather#index"
   get "/currencies" => "currencies#index"
+  get "/currencies/:entity" => "currencies#show"
 end
