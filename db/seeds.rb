@@ -10,7 +10,7 @@ User.create(first_name: "Paul", last_name: "Losso", email: "paul@example.com", p
 
 require "csv"
 
-csv_text = File.read(Rails.root.join("lib", "seeds", "codes-all_csv-edit.csv"))
+csv_text = File.read(Rails.root.join("lib", "seeds", "currency_v3.csv"))
 csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
 csv.each do |row|
   c = Currency.new
